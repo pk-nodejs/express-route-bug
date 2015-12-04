@@ -24,11 +24,11 @@ describe('Express dynamic routes testing to respond with LOCAL scope JS variable
 			.expect({name:name},done);
 	});
 	
-	it('/localScopeUsers/getName should return same name as above', function(done){
+	it('/localScopeUsers/getName1 should return same name as above', function(done){
 		var name = 'Pradeep';
 		
 		request
-		.get('/localScopeUsers/getName')
+		.get('/localScopeUsers/getName1')
 		.expect({name:name},done);
 	
 	});
@@ -40,11 +40,20 @@ describe('Express dynamic routes testing to respond with LOCAL scope JS variable
 			.expect({name:name},done);
 	});
 	// This is where it is getting failed.!!
-	it('/localScopeUsers/getName should return same name as above', function(done){
+	it('/localScopeUsers/getName1 should return old value', function(done){
+		var name = 'Pradeep';
+		
+		request
+		.get('/localScopeUsers/getName1')
+		.expect({name:name},done);
+	
+	});
+	
+	it('/localScopeUsers/getName2 should return new value', function(done){
 		var name = 'Kumar';
 		
 		request
-		.get('/localScopeUsers/getName')
+		.get('/localScopeUsers/getName2')
 		.expect({name:name},done);
 	
 	});

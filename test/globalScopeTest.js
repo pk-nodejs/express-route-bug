@@ -24,11 +24,11 @@ describe('Express dynamic routes testing to respond with GLOBAL scope JS variabl
 			.expect({name:name},done);
 	});
 	
-	it('/globalScopeUsers/getName should return same name as above', function(done){
+	it('/globalScopeUsers/getName1 should return same name as above', function(done){
 		var name = 'Pradeep';
 		
 		request
-		.get('/globalScopeUsers/getName')
+		.get('/globalScopeUsers/getName1')
 		.expect({name:name},done);
 	
 	});
@@ -40,11 +40,20 @@ describe('Express dynamic routes testing to respond with GLOBAL scope JS variabl
 			.expect({name:name},done);
 	});
 	
-	it('/globalScopeUsers/getName should return same name as above', function(done){
+	it('/globalScopeUsers/getName1 should return same name as above', function(done){
 		var name = 'Kumar';
 		
 		request
-		.get('/globalScopeUsers/getName')
+		.get('/globalScopeUsers/getName1')
+		.expect({name:name},done);
+	
+	});
+	
+	it('/globalScopeUsers/getName2 should return same name as above', function(done){
+		var name = 'Kumar';
+		
+		request
+		.get('/globalScopeUsers/getName2')
 		.expect({name:name},done);
 	
 	});
